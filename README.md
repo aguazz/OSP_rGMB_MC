@@ -1,7 +1,3 @@
-Below is a sample **README.md** file that you can use for your GitHub repository. This file explains the purpose of each script, the structure of the repository, and provides instructions for installation, running tests, and generating data and images.
-
----
-
 # Optimal Stopping for Random Gauss–Markov Bridges
 
 This repository contains R scripts that implement and test numerical methods for solving an Optimal Stopping Problem (OSP) for Gauss–Markov processes (GMPs). In particular, the approach involves transforming the underlying process, simulating bridges, and then solving an OSP by backward dynamic programming. The repository provides the following main scripts:
