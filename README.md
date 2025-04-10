@@ -77,4 +77,4 @@ This script uses the `testthat` package to perform automated tests and visual ch
 
 ## How to Run
 
-From your R console or RStudio, run the whole data generator script (`r source("data_generator.R")`) or just isolated cases within. Run the image generator script (`r source("image_generator.R")`) to obtain the associated images. You can also create/add your own cases following the template in these two scripts.
+From your R console or RStudio, run the whole data generator script (`source("data_generator.R")`) or just isolated cases within. Run the image generator script (`source("image_generator.R")`) to obtain the associated images. You can also create/add your own cases following the template in these two scripts.
