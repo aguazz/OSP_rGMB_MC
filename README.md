@@ -2,7 +2,7 @@
 
 This repository contains R scripts that implement and test numerical methods for solving an Optimal Stopping Problem (OSP) for Gauss–Markov processes (GMPs). In particular, the approach involves transforming the underlying process, simulating bridges, and then solving an OSP by backward dynamic programming. The repository provides the following main scripts:
 
-- **functions.R**: Contains core functions for creating Gauss–Markov process (GMP) splines, computing mean/variance/covariance, simulating bridges, and solving the optimal stopping problem.
+- **functions.R**: Contains functions for creating partial integrals of GMPs' coefficeints, computing their mean/variance/covariance, simulating bridges, and solving the optimal stopping problem.
 - **data_generator.R**: Uses the functions defined in *functions.R* to generate simulation data under several parameter regimes (cases) and saves the OSP solution objects in the `data/` directory.
 - **image_generator.R**: Loads the data files produced by *data_generator.R* and generates decision region plots. A parameter allows toggling between a green/red color scheme and a white/gray scheme.
 - **test.R**: Contains unit tests (via the `testthat` package) and visual checks to verify that the implemented functions behave as expected. This includes comparing the numerical mean/variance/covariance produced by the splines against closed-form values for an Ornstein–Uhlenbeck (OU) process and testing the performance of the Metropolis–Hastings (MH) samplers.
@@ -42,7 +42,7 @@ install.packages(c("compiler", "truncnorm", "scales", "tools", "testthat"))
 
 This is the main script containing functions which:
 
-- **build_gmp_splines(...)**: Computes partial integrals (for slope, trend, and volatility) on a fine time grid using the trapezoidal rule and returns spline functions.
+- **gmp_integrals(...)**: Computes partial integrals (for slope, trend, and volatility) on a fine time grid using the trapezoidal rule and returns spline functions.
 - **phi(...)**, **mean_gmp(...)**, **var_gmp(...)**, **cov_gmp(...)**: Compute the transition kernel components (exponential factor, mean, variance, covariance) for the GMP.
 - **simulate_gmp_bridge(...)**: Simulates a bridge from time `t0` to `t1` given an initial condition and a forced terminal value using the numerical approximations.
 - **sample_z_discrete(...)** and **sample_z_cont(...)**: Sample terminal values from the posterior distribution of the process at time `T` given the current state; supports both discrete and continuous (including MH-based) sampling.
